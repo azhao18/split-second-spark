@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split-Second Spark - EdgeOne Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen active">
+            <div class="screen-content">
+                <div class="logo-section">
+                    <h1 class="game-title">Split-Second Spark</h1>
+                    <p class="game-subtitle">Instant reactions, quick decisions, explosive moments</p>
+                </div>
+                <div class="menu-buttons">
+                    <button class="btn btn--primary btn--lg" id="startButton">Start Game</button>
+                    <button class="btn btn--secondary btn--lg" id="instructionsButton">Instructions</button>
+                </div>
+                <div class="edgeone-branding">
+                    <div class="edgeone-logo">EdgeOne</div>
+                    <p class="powered-by">Powered by Tencent EdgeOne</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions Screen -->
+        <div id="instructionsScreen" class="screen">
+            <div class="screen-content">
+                <h2>How to Play</h2>
+                <div class="instructions-list">
+                    <div class="instruction-item">
+                        <span class="instruction-icon">🎯</span>
+                        <span>Click on the glowing targets before they disappear</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-icon">💔</span>
+                        <span>Each missed target costs you one life</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-icon">⚡</span>
+                        <span>Game speed increases as you progress</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-icon">⭐</span>
+                        <span>Quick reactions earn bonus points</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-icon">🏆</span>
+                        <span>Survive as long as possible!</span>
+                    </div>
+                </div>
+                <button class="btn btn--primary btn--lg" id="backToMenuButton">Back to Menu</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <div class="game-hud">
+                <div class="hud-left">
+                    <div class="lives-container">
+                        <span class="hud-label">Lives:</span>
+                        <div class="lives-display" id="livesDisplay"></div>
+                    </div>
+                </div>
+                <div class="hud-right">
+                    <div class="score-container">
+                        <span class="hud-label">Score:</span>
+                        <span class="score-value" id="scoreDisplay">0</span>
+                    </div>
+                </div>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen">
+            <div class="screen-content">
+                <h2>Game Over</h2>
+                <div class="final-score">
+                    <span class="score-label">Final Score:</span>
+                    <span class="score-value" id="finalScore">0</span>
+                </div>
+                <div class="high-score">
+                    <span class="score-label">High Score:</span>
+                    <span class="score-value" id="highScore">0</span>
+                </div>
+                <div class="menu-buttons">
+                    <button class="btn btn--primary btn--lg" id="playAgainButton">Play Again</button>
+                    <button class="btn btn--secondary btn--lg" id="backToMenuFromGameOver">Back to Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Star Field Background -->
+        <div id="starField"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
